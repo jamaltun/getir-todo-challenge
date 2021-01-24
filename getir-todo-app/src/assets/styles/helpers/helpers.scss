@@ -1,0 +1,408 @@
+// if auto-scale value is 'on'
+@if $auto-scale== "on" {
+  html {
+    /* for auto-scaling of all template structures with REM unit */
+    font-size: $template-auto-scale-value-xxl;
+  }
+}
+
+body {
+  font-size: $global-font-size;
+  -webkit-font-smoothing: auto;
+}
+
+/* card */
+// =============================================================================================
+//.card{background-color:$white; display:block; width:100%; height:auto; box-sizing:border-box;}
+
+/* flex boxes */
+// =============================================================================================
+.flx {
+  @include displayFlexGenerator();
+}
+
+.inl-flx {
+  @include displayInlineFlexGenerator();
+}
+
+.flx-wrp {
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flx-nw {
+  -webkit-flex-wrap: nowrap $isImportant;
+  -ms-flex-wrap: nowrap $isImportant;
+  flex-wrap: nowrap $isImportant;
+}
+
+// fluid flex box
+// .flx.fluid{ @extend .flx-wrp;
+//   & .flx{flex-basis:0; flex-grow:1; @extend .flx-wrp; width:auto;}
+// }
+
+// flex grow
+.flx-gr-1 {
+  flex-grow: 1 $isImportant;
+  -ms-flex-basis: 1 $isImportant;
+  -webkit-flex-basis: 1 $isImportant;
+}
+
+// flex boxes directions (comes to flex container)
+.dir-r {
+  flex-direction: row;
+}
+
+.dir-rr {
+  flex-direction: row-reverse;
+}
+
+.dir-c {
+  flex-direction: column;
+  flex-basis: auto;
+}
+
+.dir-cr {
+  flex-direction: column-reverse;
+  flex-basis: auto;
+}
+
+// flex basis
+//@include flexBasisGenerator(1, 100, 1, '', $isImportant);
+// .flx-bss-0{flex-basis:0 $isImportant; -ms-flex-basis:0 $isImportant; -webkit-flex-basis:0 $isImportant;}
+
+// flex boxes justify items (comes to flex container)
+.jst-s {
+  justify-content: flex-start;
+}
+
+.jst-e {
+  justify-content: flex-end;
+}
+
+.jst-c {
+  justify-content: center;
+}
+
+.jst-sb {
+  justify-content: space-between;
+}
+
+.jst-sa {
+  justify-content: space-around;
+}
+
+.jst-se {
+  justify-content: space-evenly;
+}
+
+// flex boxes align items vertically (comes to flex container)
+.ialgn-s {
+  align-items: flex-start;
+}
+
+.ialgn-e {
+  align-items: flex-end;
+}
+
+.ialgn-c {
+  align-items: center;
+}
+
+.ialgn-st {
+  align-items: stretch;
+}
+
+// flex boxes align content vertically (comes to flex container)
+.calgn-s {
+  align-content: flex-start;
+}
+
+.calgn-e {
+  align-content: flex-end;
+}
+
+.calgn-c {
+  align-content: center;
+}
+
+.calgn-st {
+  align-content: stretch;
+}
+
+.calgn-sb {
+  align-content: space-between;
+}
+
+.calgn-sa {
+  align-content: space-around;
+}
+
+// self aligning
+.salgn-s {
+  align-self: flex-start;
+}
+
+.salgn-e {
+  align-self: flex-end;
+}
+
+.salgn-c {
+  align-self: center;
+}
+
+.salgn-st {
+  align-self: stretch;
+}
+
+// grid justify self item
+.sjst-s {
+  justify-self: start;
+}
+
+.sjst-e {
+  justify-self: end;
+}
+
+.sjst-c {
+  justify-self: center;
+}
+
+.sjst-st {
+  justify-self: stretch;
+}
+
+// grid justify items
+.ijst-s {
+  justify-items: start;
+}
+
+.ijst-e {
+  justify-items: end;
+}
+
+.ijst-c {
+  justify-items: center;
+}
+
+.ijst-st {
+  justify-items: stretch;
+}
+
+/* pointer events */
+// =============================================================================================
+.poi-e-none {
+  pointer-events: none $isImportant;
+}
+
+.poi-e-all {
+  pointer-events: all $isImportant;
+}
+
+/* cursor types */
+// =============================================================================================
+.crs-pntr {
+  cursor: pointer $isImportant;
+}
+
+.crs-crsh {
+  cursor: crosshair $isImportant;
+}
+
+.crs-cell {
+  cursor: cell $isImportant;
+}
+
+.crs-cntxt {
+  cursor: context-menu $isImportant;
+}
+
+.crs-col-rsz {
+  cursor: col-resize $isImportant;
+}
+
+.crs-row-rsz {
+  cursor: row-resize $isImportant;
+}
+
+.crs-cpy {
+  cursor: copy $isImportant;
+}
+
+.crs-ndrp {
+  cursor: no-drop $isImportant;
+}
+
+.crs-prgrs {
+  cursor: progress $isImportant;
+}
+
+.crs-txt {
+  cursor: text $isImportant;
+}
+
+.crs-zin {
+  cursor: zoom-in $isImportant;
+}
+
+.crs-zout {
+  cursor: zoom-out $isImportant;
+}
+
+.crs-none {
+  cursor: none $isImportant;
+}
+
+.crs-hlp {
+  cursor: help $isImportant;
+}
+
+.crs-mv {
+  cursor: move $isImportant;
+}
+
+/* opacity */
+// =============================================================================================
+@include opacity(0, $isImportant);
+
+/* positioning */
+// =============================================================================================
+.pos-s {
+  position: static $isImportant;
+}
+
+.pos-a {
+  position: absolute $isImportant;
+}
+
+.pos-f {
+  position: fixed $isImportant;
+  @include FastScroll();
+}
+
+.pos-r {
+  position: relative $isImportant;
+}
+
+.pos-i {
+  position: initial $isImportant;
+}
+
+/* displaying */
+// =============================================================================================
+.dsp-b {
+  display: block $isImportant;
+}
+
+.dsp-ib {
+  display: inline-block $isImportant;
+}
+
+.dsp-i {
+  display: inline $isImportant;
+}
+
+.dsp-li {
+  display: list-item $isImportant;
+}
+
+.dsp-t {
+  display: table $isImportant;
+}
+
+.dsp-it {
+  display: inline-table $isImportant;
+}
+
+.dsp-tr {
+  display: table-row $isImportant;
+}
+
+.dsp-tc {
+  display: table-cell $isImportant;
+}
+
+.dsp-g {
+  display: grid $isImportant;
+}
+
+/* appearance */
+// =============================================================================================
+.show {
+  display: block $isImportant;
+}
+
+.hide {
+  display: none $isImportant;
+}
+
+.out-n {
+  outline: none;
+}
+
+/* direction */
+.drc-rl {
+  direction: rtl $isImportant;
+}
+
+.drc-lr {
+  direction: ltr $isImportant;
+}
+
+/* text processing (text-align, text-transform, text-overflow) */
+// =============================================================================================
+.tx-c {
+  text-align: center $isImportant;
+}
+
+.tx-l {
+  text-align: left $isImportant;
+}
+
+.tx-r {
+  text-align: right $isImportant;
+}
+
+.tx-j {
+  text-align: justify $isImportant;
+}
+
+.tx-uc {
+  text-transform: uppercase $isImportant;
+}
+
+.tx-lc {
+  text-transform: lowercase $isImportant;
+}
+
+.tx-cap::first-letter {
+  text-transform: capitalize $isImportant;
+}
+
+/* font weight */
+// =============================================================================================
+.fw-l {
+  font-weight: lighter $isImportant;
+}
+
+.fw-n {
+  font-weight: normal $isImportant;
+}
+
+.fw-b {
+  font-weight: bold $isImportant;
+}
+
+/* widths (%) */
+// =============================================================================================
+.w {
+  box-sizing: border-box $isImportant;
+}
+
+.w-full {
+  width: 100% $isImportant;
+  @extend .w;
+}
+
+@include width(1, 1, "", $isImportant);

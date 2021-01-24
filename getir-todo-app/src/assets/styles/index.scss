@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+@import "vars";
+@import "reset";
+@import "custom";
+@import "helpers/main";
+
+html {
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $media-lg-max) {
+    font-size: 56.25%;
+  }
+  @media only screen and (max-width: $media-md-max) {
+    font-size: 50%;
+  }
+}
+body {
+  background: $purple;
+  background: linear-gradient(
+    166deg,
+    $purple 0%,
+    $purple 67%,
+    $yellow 67%,
+    $yellow 100%
+  );
+  color: $dark;
+}
+
+.App {
+  font-size: 1.6rem;
+  letter-spacing: -0.5px;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 5vw;
+
+  header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    img {
+      max-width: 150px;
+      max-height: 30px;
+    }
+  }
+
+  .line-through {
+    text-decoration: line-through;
+  }
+  .no-color {
+    filter: saturate(20%);
+  }
+
+  .ToDo {
+    transition: all 0.3s linear;
+  }
+
+  // ReactCSSTransitionGroup
+  .toDoTransition-enter {
+    opacity: 0.01;
+  }
+
+  .toDoTransition-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+  }
+
+  .toDoTransition-leave {
+    opacity: 1;
+  }
+
+  .toDoTransition-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+}

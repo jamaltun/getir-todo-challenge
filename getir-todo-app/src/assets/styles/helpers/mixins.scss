@@ -1,0 +1,473 @@
+/* Clearfix Generator */
+// =============================================================================================
+@mixin clearFixGenerator() {
+
+  &:before,
+  &:after {
+    content: '.';
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+/* Clearfix Destroyer */
+// =============================================================================================
+@mixin clearFixDestroyer() {
+
+  &:before,
+  &:after {
+    content: '';
+    display: inherit;
+    overflow: hidden;
+  }
+
+  &:after {
+    clear: none;
+  }
+}
+
+// GPU Acceleration ( With using this mixin, GPU acceleration be used for CSS animations. )
+// =============================================================================================
+@mixin GPUAcceleration() {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+// Fast Scrolling ( With using this mixin, Page scroll performance improves. )
+// =============================================================================================
+@mixin FastScroll() {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+// For fixing iOS Safari poor scrolling problem
+// =============================================================================================
+@mixin fixiOSsafariScrollProblem() {
+  /* for fixing iOS Safari poor scrolling problem  */
+  -webkit-overflow-scrolling: touch;
+  -moz-overflow-scrolling: touch;
+  -ms-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+// Mixin for Sticky elements at iOS based devices
+// =============================================================================================
+@mixin sticky() {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+}
+
+// Flex Grid Items Grow Values Generator
+// =============================================================================================
+@mixin displayFlexGenerator() {
+  display: -webkit-box $isImportant;
+  display: -webkit-flex $isImportant;
+  display: -webkit-flexbox $isImportant;
+  display: -moz-flex $isImportant;
+  display: -moz-box $isImportant;
+  display: -ms-flexbox $isImportant;
+  display: flex $isImportant;
+}
+
+// Inline Flex Grid Items Grow Values Generator
+// =============================================================================================
+@mixin displayInlineFlexGenerator() {
+  display: -webkit-inline-box $isImportant;
+  display: -webkit-inline-flex $isImportant;
+  display: -webkit-inline-flexbox $isImportant;
+  display: -moz-inline-flex $isImportant;
+  display: -moz-inline-box $isImportant;
+  display: -ms-inline-flexbox $isImportant;
+  display: inline-flex $isImportant;
+}
+
+// Z-Index Generator
+// =============================================================================================
+@mixin zindexGenerator($min,
+  $max,
+  $increment,
+  $suffix: null,
+  $isImportant: null) {
+  @while $min <=$max {
+    .zi-#{$min}#{$suffix} {
+      z-index: #{$min} $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Opacity Generator Mixin
+// =============================================================================================
+@mixin opacity($opacity, $suffix: null, $isImportant: null) {
+  @while $opacity < 1 {
+    $valueForIE: $opacity * 100;
+
+    .op-#{($opacity*100)}#{$suffix} {
+      opacity: $opacity $isImportant;
+      -webkit-opacity: $opacity $isImportant;
+      -moz-opacity: $opacity $isImportant;
+      filter: alpha(opacity=$valueForIE) $isImportant;
+    }
+
+    $opacity: $opacity+0.1;
+  }
+}
+
+// Font-size Generator Mixin
+// =============================================================================================
+@mixin font-size($size, $limit, $increment, $suffix: null, $isImportant: null) {
+  @while $size <=$limit {
+    .fs-#{$size}#{$suffix} {
+      font-size: #{($size/10)}rem $isImportant;
+    }
+
+    $size: $size+$increment;
+  }
+}
+
+// Spacer Generator Mixin
+// =============================================================================================
+@mixin spacer($min, $increment, $max, $type, $suffix: null) {
+  @if $type=='vertical' {
+    @while $min <=$max {
+      .spcr-#{$min}#{$suffix} {
+        height: #{($min/10)}rem;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      $min: $min+$increment;
+    }
+  }
+
+  @else if $type=='horizontal' {
+    @while $min <=$max {
+      .hspcr-#{$min}#{$suffix} {
+        width: #{$min}px;
+        display: inline-block;
+        float: left;
+        overflow: hidden;
+        min-height: 1px;
+      }
+
+      $min: $min+$increment;
+    }
+  }
+}
+
+// Border Generator Mixin
+// =============================================================================================
+@mixin border($min, $limit, $increment, $type, $isImportant: null) {
+  @while $min <=$limit {
+    .brd-#{$min} {
+      border-style: $type $isImportant;
+      border-width: #{$min}px $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Flex Order Generator Mixin
+// =============================================================================================
+@mixin order($min, $limit, $increment, $suffix:null, $isImportant: null) {
+  @while $min <=$limit {
+    .order-#{$min}#{$suffix} {
+      order: #{$min} $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Width Generator Mixin
+// =============================================================================================
+@mixin width($min, $increment, $suffix: null, $isImportant: null) {
+  $percentagesign: '%';
+
+  @while $min <=100 {
+    @if ($min==100) {
+      .w-#{$min}#{$suffix} {
+        width: #{$min}#{$percentagesign} $isImportant;
+        box-sizing: border-box $isImportant;
+        margin-left: 0px $isImportant;
+        margin-right: 0px $isImportant;
+      }
+    }
+
+    @else {
+      .w-#{$min}#{$suffix} {
+        width: #{$min}#{$percentagesign} $isImportant;
+        box-sizing: border-box $isImportant;
+      }
+    }
+
+    $min: $min+$increment;
+  }
+
+  /* special widths */
+  .w-33#{$suffix} {
+    width: 33.33% $isImportant;
+  }
+
+  .w-66#{$suffix} {
+    width: 66.66% $isImportant;
+  }
+
+  /* auto widths for screen sizes */
+  .w-a#{$suffix} {
+    width: auto $isImportant;
+  }
+}
+
+// Max Width Generator Mixin
+// =============================================================================================
+@mixin maxWidth($min, $increment, $suffix: null, $isImportant: null) {
+  $percentagesign: '%';
+
+  @while $min <=100 {
+    @if ($min==100) {
+      .mw-#{$min}#{$suffix} {
+        max-width: #{$min}#{$percentagesign} $isImportant;
+        box-sizing: border-box $isImportant;
+        margin-left: 0px $isImportant;
+        margin-right: 0px $isImportant;
+      }
+    }
+
+    @else {
+      .mw-#{$min}#{$suffix} {
+        max-width: #{$min}#{$percentagesign} $isImportant;
+        box-sizing: border-box $isImportant;
+      }
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Height Generator Mixin
+// =============================================================================================
+@mixin height($min, $increment, $suffix: null, $isImportant: null) {
+  @while $min <=200 {
+    .h-#{$min}#{$suffix} {
+      height: #{($min/10)}rem $isImportant;
+      overflow: hidden $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Margin Generator Mixin
+// =============================================================================================
+@mixin margin($min, $increment, $max, $suffix: null, $isImportant: null) {
+  @while $min <=$max {
+    .mg-v-#{$min}#{$suffix} {
+      margin-top: #{($min/10)}rem $isImportant;
+      margin-bottom: #{($min/10)}rem $isImportant;
+    }
+
+    .mg-h-#{$min}#{$suffix} {
+      margin-left: #{($min/10)}rem $isImportant;
+      margin-right: #{($min/10)}rem $isImportant;
+    }
+
+    .mg-t-#{$min}#{$suffix} {
+      margin-top: #{($min/10)}rem $isImportant;
+    }
+
+    .mg-b-#{$min}#{$suffix} {
+      margin-bottom: #{($min/10)}rem $isImportant;
+    }
+
+    .mg-l-#{$min}#{$suffix} {
+      margin-left: #{($min/10)}rem $isImportant;
+    }
+
+    .mg-r-#{$min}#{$suffix} {
+      margin-right: #{($min/10)}rem $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Padding Generator Mixin
+// =============================================================================================
+@mixin padding($min, $increment, $max, $suffix: null, $isImportant: null) {
+  @while $min <=$max {
+    .pd-v-#{$min}#{$suffix} {
+      padding-top: #{($min/10)}rem $isImportant;
+      padding-bottom: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    .pd-h-#{$min}#{$suffix} {
+      padding-left: #{($min/10)}rem $isImportant;
+      padding-right: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    .pd-t-#{$min}#{$suffix} {
+      padding-top: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    .pd-r-#{$min}#{$suffix} {
+      padding-right: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    .pd-b-#{$min}#{$suffix} {
+      padding-bottom: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    .pd-l-#{$min}#{$suffix} {
+      padding-left: #{($min/10)}rem $isImportant;
+      box-sizing: border-box $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// Box Shadow Generator Mixin
+// =============================================================================================
+@mixin shadow($shadow1, $shadow2: null) {
+  -webkit-box-shadow: $shadow1, $shadow2;
+  -moz-box-shadow: $shadow1, $shadow2;
+  box-shadow: $shadow1, $shadow2;
+}
+
+// Text Shadow Generator Mixin
+// =============================================================================================
+@mixin text-shadow($shadow1, $shadow2: null) {
+  -webkit-text-shadow: $shadow1, $shadow2;
+  text-shadow: $shadow1, $shadow2;
+}
+
+// Rounding Corners Generator Mixin
+// =============================================================================================
+@mixin rounding($min, $increment, $max, $suffix: null, $isImportant: null) {
+  @while $min <=$max {
+    .rnd-#{$min}#{$suffix} {
+      border-top-left-radius: #{$min}px $isImportant;
+      -webkit-border-top-left-radius: #{$min}px $isImportant;
+      -moz-border-top-left-radius: #{$min}px $isImportant;
+      border-top-right-radius: #{$min}px $isImportant;
+      -webkit-border-top-right-radius: #{$min}px $isImportant;
+      -moz-border-top-right-radius: #{$min}px $isImportant;
+      border-bottom-right-radius: #{$min}px $isImportant;
+      -webkit-border-bottom-right-radius: #{$min}px $isImportant;
+      -moz-border-bottom-right-radius: #{$min}px $isImportant;
+      border-bottom-left-radius: #{$min}px $isImportant;
+      -webkit-border-bottom-left-radius: #{$min}px $isImportant;
+      -moz-border-bottom-left-radius: #{$min}px $isImportant;
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+// rounding unbalanced corners class generator mixin
+// =============================================================================================
+@mixin rounding-unbalanced($min,
+  $increment,
+  $max,
+  $corner,
+  $isImportant: null) {
+  @while $min <=$max {
+    @if $corner=='tl' {
+      .rnd-#{$corner}-#{$min} {
+        border-top-left-radius: #{$min} $isImportant;
+        -webkit-border-top-left-radius: #{$min} $isImportant;
+        -moz-border-top-left-radius: #{$min} $isImportant;
+      }
+    }
+
+    @else if $corner=='tr' {
+      .rnd-#{$corner}-#{$min} {
+        border-top-right-radius: #{$min} $isImportant;
+        -webkit-border-top-right-radius: #{$min} $isImportant;
+        -moz-border-top-right-radius: #{$min} $isImportant;
+      }
+    }
+
+    @else if $corner=='br' {
+      .rnd-#{$corner}-#{$min} {
+        border-bottom-right-radius: #{$min} $isImportant;
+        -webkit-border-bottom-right-radius: #{$min} $isImportant;
+        -moz-border-bottom-right-radius: #{$min} $isImportant;
+      }
+    }
+
+    @else if $corner=='bl' {
+      .rnd-#{$corner}-#{$min} {
+        border-bottom-left-radius: #{$min} $isImportant;
+        -webkit-border-bottom-left-radius: #{$min} $isImportant;
+        -moz-border-bottom-left-radius: #{$min} $isImportant;
+      }
+    }
+
+    $min: $min+$increment;
+  }
+}
+
+//animation generator mixin
+// Usage : animation(animationName ease-in-out 0.5s)
+// =============================================================================================
+@mixin animation($value, $fillMode) {
+  animation: $value;
+  -webkit-animation: $value;
+  -moz-animation: $value;
+  -o-animation: $value;
+  -ms-animation: $value;
+  animation-fill-mode: $fillMode;
+  -webkit-animation-fill-mode: $fillMode;
+  -ms-animation-fill-mode: $fillMode;
+  -moz-animation-fill-mode: $fillMode;
+  -o-animation-fill-mode: $fillMode;
+  @include GPUAcceleration();
+}
+
+// keyframes generator mixin
+// Usage :
+// @include keyframes(animationName){
+//  0% { @include shadow(0px 0px 0px 0px transparent, 0px 0px 0px 0px transparent); }
+//  50% { @include shadow(0px 0px 0px 3px rgba(#cccccc, 0.5), 0px 0px 0px 0px transparent); }
+//  100% { @include shadow(0px 0px 0px 16px transparent, 0px 0px 0px 0px transparent); }
+//}
+
+// =============================================================================================
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+
+  @keyframes #{$animationName} {
+    @content;
+  }
+}

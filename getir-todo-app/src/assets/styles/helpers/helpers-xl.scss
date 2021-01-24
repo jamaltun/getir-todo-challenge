@@ -1,0 +1,470 @@
+/* ======= Extra Extra Large Screens (xl) (Entertainment Systems and Smart TVs) ======================================================= */
+
+@media only screen and (max-width: $media-xl-max) {
+  // if auto-scale value is 'on'
+  @if $auto-scale== "on" {
+    html {
+      /* for auto-scaling of all template structures with REM unit */
+      font-size: $template-auto-scale-value-xl;
+    }
+  }
+
+  /* appearance */
+  // =============================================================================================
+  .show-xl {
+    display: block $isImportant;
+  }
+
+  .hide-xl {
+    display: none $isImportant;
+  }
+
+  .secret-xl {
+    display: none $isImportant;
+  }
+
+  .disabled-xl {
+    pointer-events: none $isImportant;
+  }
+
+  /* flex boxes */
+  // =============================================================================================
+  .flx-xl {
+    @include displayFlexGenerator();
+  }
+
+  .flx-wrp-xl {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .flx-nw-xl {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  // flex basis
+  //@include flexBasisGenerator(0, 100, 1, '-xl', $isImportant);
+
+  .flx-bss-0-xl {
+    flex-basis: 0 $isImportant;
+    -ms-flex-basis: 0 $isImportant;
+    -webkit-flex-basis: 0 $isImportant;
+  }
+
+  // flex grow
+  .flx-gr-1-xl {
+    flex-grow: 1 $isImportant;
+    -ms-flex-basis: 1 $isImportant;
+    -webkit-flex-basis: 1 $isImportant;
+  }
+
+  // flex boxes directions
+  .dir-r-xl {
+    flex-direction: row;
+  }
+
+  .dir-rr-xl {
+    flex-direction: row-reverse;
+  }
+
+  .dir-c-xl {
+    flex-direction: column;
+  }
+
+  .dir-cr-xl {
+    flex-direction: column-reverse;
+  }
+
+  // flex boxes justify items
+  .jst-s-xl {
+    justify-content: flex-start;
+  }
+
+  .jst-e-xl {
+    justify-content: flex-end;
+  }
+
+  .jst-c-xl {
+    justify-content: center;
+  }
+
+  .jst-sb-xl {
+    justify-content: space-between;
+  }
+
+  .jst-sa-xl {
+    justify-content: space-around;
+  }
+
+  .jst-se-xl {
+    justify-content: space-evenly;
+  }
+
+  // flex boxes align items
+  .ialgn-s-xl {
+    align-items: flex-start;
+  }
+
+  .ialgn-e-xl {
+    align-items: flex-end;
+  }
+
+  .ialgn-c-xl {
+    align-items: center;
+  }
+
+  .ialgn-st-xl {
+    align-items: stretch;
+  }
+
+  // flex boxes align content
+  .calgn-s-xl {
+    align-content: flex-start;
+  }
+
+  .calgn-e-xl {
+    align-content: flex-end;
+  }
+
+  .calgn-c-xl {
+    align-content: center;
+  }
+
+  .calgn-st-xl {
+    align-content: stretch;
+  }
+
+  .calgn-s-xl {
+    align-content: flex-start;
+  }
+
+  // self aligning
+  .salgn-s-xl {
+    align-self: flex-start;
+  }
+
+  .salgn-e-xl {
+    align-self: flex-end;
+  }
+
+  .salgn-c-xl {
+    align-self: center;
+  }
+
+  .salgn-st-xl {
+    align-self: stretch;
+  }
+
+  // Flex Order
+  @include order(0, 12, 1, "-xl", $isImportant);
+
+  /* z-index */
+  // =============================================================================================
+  @include zindexGenerator(1, 30, 1, "-xl", $isImportant);
+
+  /* floating */
+  // =============================================================================================
+  .fl-l-xl {
+    float: left $isImportant;
+  }
+
+  .fl-r-xl {
+    float: right $isImportant;
+  }
+
+  .fl-n-xl {
+    float: none $isImportant;
+  }
+
+  .fl-i-xl {
+    float: initial $isImportant;
+  }
+
+  /* visibility (overflow) */
+  // =============================================================================================
+  .vsb-h-xl {
+    visibility: hidden $isImportant;
+  }
+
+  .vsb-v-xl {
+    visibility: visible $isImportant;
+  }
+
+  .ov-v-xl {
+    overflow: visible $isImportant;
+  }
+
+  .ov-h-xl {
+    overflow: hidden $isImportant;
+  }
+
+  .ov-s-xl {
+    overflow: scroll $isImportant;
+  }
+
+  .ov-a-xl {
+    overflow: auto $isImportant;
+  }
+
+  .ov-i-xl {
+    overflow: initial $isImportant;
+  }
+
+  .ov-x-s-xl {
+    overflow-x: scroll $isImportant;
+  }
+
+  .ov-x-h-xl {
+    overflow-x: hidden $isImportant;
+  }
+
+  .ov-y-s-xl {
+    overflow-y: scroll $isImportant;
+  }
+
+  .ov-y-h-xl {
+    overflow-y: hidden $isImportant;
+  }
+
+  /* opacity */
+  // =============================================================================================
+  @include opacity(0, "-xl", $isImportant);
+
+  /* background size */
+  // =============================================================================================
+  .bg-fll-xl {
+    background-size: 100% $isImportant;
+  }
+
+  .bg-cn-xl {
+    background-size: contain $isImportant;
+  }
+
+  .bg-cv-xl {
+    background-size: cover $isImportant;
+  }
+
+  /* background position */
+  // =============================================================================================
+  .bg-nr-xl {
+    background-repeat: no-repeat $isImportant;
+  }
+
+  .bg-r-xl {
+    background-repeat: repeat $isImportant;
+  }
+
+  .bg-rx-xl {
+    background-repeat: repeat-x $isImportant;
+  }
+
+  .bg-ry-xl {
+    background-repeat: repeat-y $isImportant;
+  }
+
+  .bg-p-lt-xl {
+    background-position: left top $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-lc-xl {
+    background-position: left center $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-lb-xl {
+    background-position: left bottom $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-rt-xl {
+    background-position: right top $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-rc-xl {
+    background-position: right center $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-rb-xl {
+    background-position: right bottom $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-ct-xl {
+    background-position: center top $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-cc-xl {
+    background-position: center center $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  .bg-p-cb-xl {
+    background-position: center bottom $isImportant;
+    @extend .bg-nr-xl;
+  }
+
+  /* positioning */
+  // =============================================================================================
+  .pos-s-xl {
+    position: static $isImportant;
+  }
+
+  .pos-a-xl {
+    position: absolute $isImportant;
+  }
+
+  .pos-f-xl {
+    position: fixed $isImportant;
+    @include FastScroll();
+  }
+
+  .pos-r-xl {
+    position: relative $isImportant;
+  }
+
+  .pos-i-xl {
+    position: initial $isImportant;
+  }
+
+  /* positioning to edges of container element for absolute elements */
+  // =============================================================================================
+  .t-0-xl {
+    top: 0 $isImportant;
+  }
+
+  .r-0-xl {
+    right: 0 $isImportant;
+  }
+
+  .b-0-xl {
+    bottom: 0 $isImportant;
+  }
+
+  .l-0-xl {
+    left: 0 $isImportant;
+  }
+
+  .t-a-xl {
+    top: auto $isImportant;
+  }
+
+  .r-a-xl {
+    right: auto $isImportant;
+  }
+
+  .b-a-xl {
+    bottom: auto $isImportant;
+  }
+
+  .l-a-xl {
+    left: auto $isImportant;
+  }
+
+  /* positioning to corners of container element for absolute elements */
+  // =============================================================================================
+  .t-l-0-xl {
+    top: 0 $isImportant;
+    left: 0 $isImportant;
+  }
+
+  .t-r-0-xl {
+    top: 0 $isImportant;
+    right: 0 $isImportant;
+  }
+
+  .b-l-0-xl {
+    bottom: 0 $isImportant;
+    left: 0 $isImportant;
+  }
+
+  .b-r-0-xl {
+    bottom: 0 $isImportant;
+    right: 0 $isImportant;
+  }
+
+  /* displaying */
+  // =============================================================================================
+  .dsp-b-xl {
+    display: block $isImportant;
+  }
+
+  .dsp-ib-xl {
+    display: inline-block $isImportant;
+  }
+
+  .dsp-i-xl {
+    display: inline $isImportant;
+  }
+
+  .dsp-li-xl {
+    display: list-item $isImportant;
+  }
+
+  .dsp-t-xl {
+    display: table $isImportant;
+  }
+
+  .dsp-it-xl {
+    display: inline-table $isImportant;
+  }
+
+  .dsp-tr-xl {
+    display: table-row $isImportant;
+  }
+
+  .dsp-tc-xl {
+    display: table-cell $isImportant;
+  }
+
+  .dsp-g-xl {
+    display: grid $isImportant;
+  }
+
+  /* text processing (text-align, text-transform, text-oveflow) */
+  // =============================================================================================
+  .tx-c-xl {
+    text-align: center $isImportant;
+  }
+
+  .tx-l-xl {
+    text-align: left $isImportant;
+  }
+
+  .tx-r-xl {
+    text-align: right $isImportant;
+  }
+
+  .tx-j-xl {
+    text-align: justify $isImportant;
+  }
+
+  /* font sizing */
+  // =============================================================================================
+  @include font-size(3, 200, 1, "-xl", $isImportant);
+
+  /* spacers (vertical) */
+  // =============================================================================================
+  @include spacer(5, 5, 200, "vertical", "-xl");
+
+  /* spacers (horizontal) */
+  // =============================================================================================
+  @include spacer(5, 5, 200, "horizontal", "-xl");
+
+  /* borders */
+  // =============================================================================================
+  .brd-0-xl {
+    border: 0px none $isImportant;
+  }
+
+  /* widths (%) */
+  // =============================================================================================
+  @include width(5, 5, "-xl", $isImportant);
+  //@include minWidth(1, 1, '-xl', $isImportant); // for grid and cells
+}

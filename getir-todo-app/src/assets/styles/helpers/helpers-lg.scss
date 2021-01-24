@@ -1,0 +1,470 @@
+/* ======= Extra Extra Large Screens (lg) (Entertainment Systems and Smart TVs) ======================================================= */
+
+@media only screen and (max-width: $media-lg-max) {
+  // if auto-scale value is 'on'
+  @if $auto-scale== "on" {
+    html {
+      /* for auto-scaling of all template structures with REM unit */
+      font-size: $template-auto-scale-value-lg;
+    }
+  }
+
+  /* appearance */
+  // =============================================================================================
+  .show-lg {
+    display: block $isImportant;
+  }
+
+  .hide-lg {
+    display: none $isImportant;
+  }
+
+  .secret-lg {
+    display: none $isImportant;
+  }
+
+  .disabled-lg {
+    pointer-events: none $isImportant;
+  }
+
+  /* flex boxes */
+  // =============================================================================================
+  .flx-lg {
+    @include displayFlexGenerator();
+  }
+
+  .flx-wrp-lg {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .flx-nw-lg {
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  // flex basis
+  //@include flexBasisGenerator(0, 100, 1, "-lg", $isImportant);
+
+  .flx-bss-0-lg {
+    flex-basis: 0 $isImportant;
+    -ms-flex-basis: 0 $isImportant;
+    -webkit-flex-basis: 0 $isImportant;
+  }
+
+  // flex grow
+  .flx-gr-1-lg {
+    flex-grow: 1 $isImportant;
+    -ms-flex-basis: 1 $isImportant;
+    -webkit-flex-basis: 1 $isImportant;
+  }
+
+  // flex boxes directions
+  .dir-r-lg {
+    flex-direction: row;
+  }
+
+  .dir-rr-lg {
+    flex-direction: row-reverse;
+  }
+
+  .dir-c-lg {
+    flex-direction: column;
+  }
+
+  .dir-cr-lg {
+    flex-direction: column-reverse;
+  }
+
+  // flex boxes justify items
+  .jst-s-lg {
+    justify-content: flex-start;
+  }
+
+  .jst-e-lg {
+    justify-content: flex-end;
+  }
+
+  .jst-c-lg {
+    justify-content: center;
+  }
+
+  .jst-sb-lg {
+    justify-content: space-between;
+  }
+
+  .jst-sa-lg {
+    justify-content: space-around;
+  }
+
+  .jst-se-lg {
+    justify-content: space-evenly;
+  }
+
+  // flex boxes align items
+  .ialgn-s-lg {
+    align-items: flex-start;
+  }
+
+  .ialgn-e-lg {
+    align-items: flex-end;
+  }
+
+  .ialgn-c-lg {
+    align-items: center;
+  }
+
+  .ialgn-st-lg {
+    align-items: stretch;
+  }
+
+  // flex boxes align content
+  .calgn-s-lg {
+    align-content: flex-start;
+  }
+
+  .calgn-e-lg {
+    align-content: flex-end;
+  }
+
+  .calgn-c-lg {
+    align-content: center;
+  }
+
+  .calgn-st-lg {
+    align-content: stretch;
+  }
+
+  .calgn-s-lg {
+    align-content: flex-start;
+  }
+
+  // self aligning
+  .salgn-s-lg {
+    align-self: flex-start;
+  }
+
+  .salgn-e-lg {
+    align-self: flex-end;
+  }
+
+  .salgn-c-lg {
+    align-self: center;
+  }
+
+  .salgn-st-lg {
+    align-self: stretch;
+  }
+
+  // Flex Order
+  @include order(0, 12, 1, "-lg", $isImportant);
+
+  /* z-index */
+  // =============================================================================================
+  @include zindexGenerator(1, 30, 1, "-lg", $isImportant);
+
+  /* floating */
+  // =============================================================================================
+  .fl-l-lg {
+    float: left $isImportant;
+  }
+
+  .fl-r-lg {
+    float: right $isImportant;
+  }
+
+  .fl-n-lg {
+    float: none $isImportant;
+  }
+
+  .fl-i-lg {
+    float: initial $isImportant;
+  }
+
+  /* visibility (overflow) */
+  // =============================================================================================
+  .vsb-h-lg {
+    visibility: hidden $isImportant;
+  }
+
+  .vsb-v-lg {
+    visibility: visible $isImportant;
+  }
+
+  .ov-v-lg {
+    overflow: visible $isImportant;
+  }
+
+  .ov-h-lg {
+    overflow: hidden $isImportant;
+  }
+
+  .ov-s-lg {
+    overflow: scroll $isImportant;
+  }
+
+  .ov-a-lg {
+    overflow: auto $isImportant;
+  }
+
+  .ov-i-lg {
+    overflow: initial $isImportant;
+  }
+
+  .ov-x-s-lg {
+    overflow-x: scroll $isImportant;
+  }
+
+  .ov-x-h-lg {
+    overflow-x: hidden $isImportant;
+  }
+
+  .ov-y-s-lg {
+    overflow-y: scroll $isImportant;
+  }
+
+  .ov-y-h-lg {
+    overflow-y: hidden $isImportant;
+  }
+
+  /* opacity */
+  // =============================================================================================
+  @include opacity(0, "-lg", $isImportant);
+
+  /* background size */
+  // =============================================================================================
+  .bg-fll-lg {
+    background-size: 100% $isImportant;
+  }
+
+  .bg-cn-lg {
+    background-size: contain $isImportant;
+  }
+
+  .bg-cv-lg {
+    background-size: cover $isImportant;
+  }
+
+  /* background position */
+  // =============================================================================================
+  .bg-nr-lg {
+    background-repeat: no-repeat $isImportant;
+  }
+
+  .bg-r-lg {
+    background-repeat: repeat $isImportant;
+  }
+
+  .bg-rx-lg {
+    background-repeat: repeat-x $isImportant;
+  }
+
+  .bg-ry-lg {
+    background-repeat: repeat-y $isImportant;
+  }
+
+  .bg-p-lt-lg {
+    background-position: left top $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-lc-lg {
+    background-position: left center $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-lb-lg {
+    background-position: left bottom $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-rt-lg {
+    background-position: right top $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-rc-lg {
+    background-position: right center $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-rb-lg {
+    background-position: right bottom $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-ct-lg {
+    background-position: center top $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-cc-lg {
+    background-position: center center $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  .bg-p-cb-lg {
+    background-position: center bottom $isImportant;
+    @extend .bg-nr-lg;
+  }
+
+  /* positioning */
+  // =============================================================================================
+  .pos-s-lg {
+    position: static $isImportant;
+  }
+
+  .pos-a-lg {
+    position: absolute $isImportant;
+  }
+
+  .pos-f-lg {
+    position: fixed $isImportant;
+    @include FastScroll();
+  }
+
+  .pos-r-lg {
+    position: relative $isImportant;
+  }
+
+  .pos-i-lg {
+    position: initial $isImportant;
+  }
+
+  /* positioning to edges of container element for absolute elements */
+  // =============================================================================================
+  .t-0-lg {
+    top: 0 $isImportant;
+  }
+
+  .r-0-lg {
+    right: 0 $isImportant;
+  }
+
+  .b-0-lg {
+    bottom: 0 $isImportant;
+  }
+
+  .l-0-lg {
+    left: 0 $isImportant;
+  }
+
+  .t-a-lg {
+    top: auto $isImportant;
+  }
+
+  .r-a-lg {
+    right: auto $isImportant;
+  }
+
+  .b-a-lg {
+    bottom: auto $isImportant;
+  }
+
+  .l-a-lg {
+    left: auto $isImportant;
+  }
+
+  /* positioning to corners of container element for absolute elements */
+  // =============================================================================================
+  .t-l-0-lg {
+    top: 0 $isImportant;
+    left: 0 $isImportant;
+  }
+
+  .t-r-0-lg {
+    top: 0 $isImportant;
+    right: 0 $isImportant;
+  }
+
+  .b-l-0-lg {
+    bottom: 0 $isImportant;
+    left: 0 $isImportant;
+  }
+
+  .b-r-0-lg {
+    bottom: 0 $isImportant;
+    right: 0 $isImportant;
+  }
+
+  /* displaying */
+  // =============================================================================================
+  .dsp-b-lg {
+    display: block $isImportant;
+  }
+
+  .dsp-ib-lg {
+    display: inline-block $isImportant;
+  }
+
+  .dsp-i-lg {
+    display: inline $isImportant;
+  }
+
+  .dsp-li-lg {
+    display: list-item $isImportant;
+  }
+
+  .dsp-t-lg {
+    display: table $isImportant;
+  }
+
+  .dsp-it-lg {
+    display: inline-table $isImportant;
+  }
+
+  .dsp-tr-lg {
+    display: table-row $isImportant;
+  }
+
+  .dsp-tc-lg {
+    display: table-cell $isImportant;
+  }
+
+  .dsp-g-lg {
+    display: grid $isImportant;
+  }
+
+  /* text processing (text-align, text-transform, text-oveflow) */
+  // =============================================================================================
+  .tx-c-lg {
+    text-align: center $isImportant;
+  }
+
+  .tx-l-lg {
+    text-align: left $isImportant;
+  }
+
+  .tx-r-lg {
+    text-align: right $isImportant;
+  }
+
+  .tx-j-lg {
+    text-align: justify $isImportant;
+  }
+
+  /* font sizing */
+  // =============================================================================================
+  @include font-size(3, 200, 1, "-lg", $isImportant);
+
+  /* spacers (vertical) */
+  // =============================================================================================
+  @include spacer(5, 5, 200, "vertical", "-lg");
+
+  /* spacers (horizontal) */
+  // =============================================================================================
+  @include spacer(5, 5, 200, "horizontal", "-lg");
+
+  /* borders */
+  // =============================================================================================
+  .brd-0-lg {
+    border: 0px none $isImportant;
+  }
+
+  /* widths (%) */
+  // =============================================================================================
+  @include width(5, 5, "-lg", $isImportant);
+  // @include minWidth(1, 1, '-lg', $isImportant); // for grid and cells
+}

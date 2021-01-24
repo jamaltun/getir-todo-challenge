@@ -1,0 +1,89 @@
+// ========================================================================================================================
+// Global Media Queries Breakpoints =======================================================================================
+
+// for xs media query (Smartphones)
+// $media-xs-min: 0px;
+$media-xs-max: 480px;
+// // for sm media query (Tablets And Phablets)
+// $media-sm-min: 420px;
+$media-sm-max: 760px;
+// // for md media query (Big Tablets And Smaller Laptops)
+// $media-md-min: 7px;
+$media-md-max: 1024px;
+// // for lg media query (Desktop PCs And Laptops)
+// $media-lg-min: 992px;
+$media-lg-max: 1500px;
+// for xl media query (Bigger PC Screens, Retina Screens)
+// $media-xl-min: 1200px;
+$media-xl-max: 1680px;
+// for xxl media query (Entertainment Systems and Smart TVs)
+// $media-xxl-min: 1600px;
+// $media-xxl-max: 1400px;
+
+// ========================================================================================================================
+// Global Template Metrics Sizing Values For Media Queries ================================================================
+
+// for auto-scaling of all template structures with REM unit
+// if you want template scaling metrics are changed automatically, set '$auto-scale' variable to 'on'
+$auto-scale: "off"; // you can set this value as 'on' or 'off'. Recommended value is 'on' for optimised visibility at Mobile, Desktop and everywhere
+$scale-degree: "small"; // you can set this value as 'small', 'medium' or 'large'. Recommended value is 'small' for optimised visibility at Mobile, Desktop and everywhere
+// if you prefer more bigger components and interface, you can set value as 'medium' or 'large'.
+
+// default scale values of template
+$template-auto-scale-value-xxl: 12px; // for xxl media query (Entertainment Systems and Smart TVs)
+$template-auto-scale-value-xl: 12px; // for xl media query (Bigger PC Screens, Entertainment Systems and TVs)
+$template-auto-scale-value-lg: 12px; // for lr media query (Desktop PCs And Laptops)
+$template-auto-scale-value-md: 11px; // for md media query (Big Tablets And Smaller Laptops)
+$template-auto-scale-value-sm: 10px; // for sm media query (Tablets And Phablets)
+$template-auto-scale-value-xs: 10px; // for xs media query (Smartphones)
+
+@if $scale-degree=="small" {
+  $template-auto-scale-value-xxl: 12px; // for xxl media query (Entertainment Systems and Smart TVs)
+  $template-auto-scale-value-xl: 12px; // for xl media query (Bigger PC Screens, Entertainment Systems and TVs)
+  $template-auto-scale-value-lg: 11px; // for lr media query (Desktop PCs And Laptops)
+  $template-auto-scale-value-md: 10px; // for md media query (Big Tablets And Smaller Laptops)
+  $template-auto-scale-value-sm: 10px; // for sm media query (Tablets And Phablets)
+  $template-auto-scale-value-xs: 9px; // for xs media query (Smartphones)
+}
+
+@else if $scale-degree=="medium" {
+  $template-auto-scale-value-xxl: 14px; // for xxl media query (Entertainment Systems and Smart TVs)
+  $template-auto-scale-value-xl: 13px; // for xl media query (Bigger PC Screens, Entertainment Systems and TVs)
+  $template-auto-scale-value-lg: 13px; // for lr media query (Desktop PCs And Laptops)
+  $template-auto-scale-value-md: 12px; // for md media query (Big Tablets And Smaller Laptops)
+  $template-auto-scale-value-sm: 11px; // for sm media query (Tablets And Phablets)
+  $template-auto-scale-value-xs: 11px; // for xs media query (Smartphones)
+}
+
+@else if $scale-degree=="large" {
+  $template-auto-scale-value-xxl: 15px; // for xxl media query (Entertainment Systems and Smart TVs)
+  $template-auto-scale-value-xl: 14px; // for xl media query (Bigger PC Screens, Entertainment Systems and TVs)
+  $template-auto-scale-value-lg: 14px; // for lr media query (Desktop PCs And Laptops)
+  $template-auto-scale-value-md: 13px; // for md media query (Big Tablets And Smaller Laptops)
+  $template-auto-scale-value-sm: 12px; // for sm media query (Tablets And Phablets)
+  $template-auto-scale-value-xs: 12px; // for xs media query (Smartphones)
+}
+
+// ========================================================================================================================
+// Global Template Metrics Sizing Values ================================================================
+
+$global-font-size: 1.2rem; // global font size
+$global-text-color: #212f40; // global text color
+$global-border-color: #212f40; // global text color
+$global-font: "Arial"; // global font family
+$global-indent: 1.8rem; // global indents
+$global-radius: 0.5rem; // global radius
+$global-spacing: 1.6rem; // global spacing
+$global-line-height: 1.4; // global line height
+
+// base colors
+$black: #000000;
+$white: #ffffff;
+$blue: #1fb6ff;
+$red: #e42a6e;
+$green: #3ecf8e;
+$orange: #e54329;
+
+// others
+$GPUAcceleration: "on";
+$isImportant: !important;
