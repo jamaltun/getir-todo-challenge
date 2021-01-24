@@ -7,27 +7,26 @@ import Filters from "../components/Filters";
 
 import ToDo from "../components/ToDo.js";
 
-const List = ({ todos }) =>
-  todos && todos.length ? (
-    <Card className="w-100 mt-5">
-      <Card.Body>
-        {/* TO DO List Title & Filter */}
-        <div className="w-100 flx dir-r jst-sb ialgn-c mb-3">
-          <h3>To Do List</h3>
+const List = ({ todos }) => (
+  <Card className="w-100 mt-5">
+    <Card.Body>
+      {/* TO DO List Title & Filter */}
+      <div className="w-100 flx dir-r jst-sb ialgn-c mb-3">
+        <h3>To Do List</h3>
 
-          <Filters />
-        </div>
+        <Filters />
+      </div>
 
-        {todos &&
-          todos.length &&
-          todos.map((todo, index) => {
-            return <ToDo todo={todo} key={`todo-${index}`} />;
-          })}
-      </Card.Body>
-    </Card>
-  ) : (
-    ""
-  );
+      {todos && todos.length ? (
+        todos.map((todo, index) => {
+          return <ToDo todo={todo} key={`todo-${index}`} />;
+        })
+      ) : (
+        <div>There is no todo here!</div>
+      )}
+    </Card.Body>
+  </Card>
+);
 
 const mapStateToProps = (state) => {
   const { visibilityFilter } = state;
